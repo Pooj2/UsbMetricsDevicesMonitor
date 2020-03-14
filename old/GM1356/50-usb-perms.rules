@@ -1,0 +1,4 @@
+# Place in /etc/udev/rules.d/
+# Init or reconnect:
+#   sudo udevadm control --reload ; sudo udevadm trigger
+SUBSYSTEM=="usb", ATTRS{idVendor}=="64bd", ATTRS{idProduct}=="74e3", GROUP="plugdev", MODE="0660"
