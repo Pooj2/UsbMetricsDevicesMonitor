@@ -1,0 +1,9 @@
+sudo systemctl enable co2monitor
+sudo systemctl status co2monitor
+sudo systemctl --now start co2monitor
+
+# Tests
+curl -s -N --connect-timeout 20 --max-time 30 http://localhost:8090/co2ppm?monitor=0
+{"data": 807}
+curl -s -N --connect-timeout 20 --max-time 30 http://localhost:8090/temperature?monitor=0
+{"data": 21.912500000000023}

@@ -1,0 +1,7 @@
+sudo addgroup co2monitor
+sudo adduser --system --group co2monitor co2monitor
+#sudo usermod -g co2monitor co2monitor
+id co2monitor
+
+sudo su - co2monitor -s /bin/bash
+

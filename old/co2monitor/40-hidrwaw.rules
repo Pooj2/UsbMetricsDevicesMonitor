@@ -1,0 +1,2 @@
+# In /lib/udev/rules.d/
+ACTION=="add", SUBSYSTEMS=="usb", ATTRS{product}=="USB-zyTemp", MODE="0664", GROUP="co2monitor"

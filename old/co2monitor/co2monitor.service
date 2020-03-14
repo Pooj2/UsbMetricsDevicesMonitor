@@ -1,0 +1,19 @@
+# From https://bypaultech.wordpress.com/tag/systemd/
+# 08-09-2019 Joop
+#
+# To be placed by sudo in /etc/systemd/system/
+#
+[Unit]
+Description=Cherrypy webserver for the co2monitor duo
+After=network.target
+ 
+[Service]
+Type=simple
+User=co2monitor
+Environment="PYTHONPATH=/usr/local/bin/setup"
+ExecStart=/home/co2monitor/bin/co2monitorservice.py
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target
+
