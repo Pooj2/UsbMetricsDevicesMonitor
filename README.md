@@ -14,7 +14,7 @@ Usb Metrics Devices Monitor UMDM goals are:
 ** PyUSB
 * that collects metrics 
 * from USB devices like
-** a TFA Dostmann CO2 Monitor
+** a 04d9:a052 TFA Dostmann CO2 Monitor
 ** a GM1356 Digital Sound Level Meter
 * that measure some quantity
 
