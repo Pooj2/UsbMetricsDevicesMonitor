@@ -15,6 +15,6 @@ Usb Metrics Devices Monitor UMDM goals are:
 * that collects metrics 
 * from USB devices like
 ** a 04d9:a052 TFA Dostmann CO2 Monitor
-** a GM1356 Digital Sound Level Meter
+** an Amgaze GM1356 Digital Sound Level Meter
 * that measure some quantity
 
