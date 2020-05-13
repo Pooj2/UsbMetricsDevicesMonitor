@@ -18,3 +18,13 @@ Usb Metrics Devices Monitor UMDM goals are:
 ** a 64bd:74e3 Amgaze GM1356 Digital Sound Level Meter
 * that measure some quantity
 
+## Create system user notes
+```bash
+sudo addgroup co2monitor
+sudo adduser --system --group co2monitor co2monitor
+#sudo usermod -g co2monitor co2monitor
+id co2monitor
+
+sudo su - co2monitor -s /bin/bash
+```
+
