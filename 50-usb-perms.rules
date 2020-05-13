@@ -2,3 +2,4 @@
 # Init or reconnect:
 #   sudo udevadm control --reload ; sudo udevadm trigger
 SUBSYSTEM=="usb", ATTRS{idVendor}=="64bd", ATTRS{idProduct}=="74e3", GROUP="plugdev", MODE="0660"
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{product}=="USB-zyTemp", GROUP="plugdev", MODE="0664"
