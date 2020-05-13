@@ -18,7 +18,11 @@ Usb Metrics Devices Monitor UMDM goals are:
 ** a 64bd:74e3 Amgaze GM1356 Digital Sound Level Meter
 * that measure some quantity
 
-## Create system user notes
+## Notes
+
+### Create system user
+TODO: modifiy for the new service
+
 ```bash
 sudo addgroup co2monitor
 sudo adduser --system --group co2monitor co2monitor
@@ -28,3 +32,21 @@ id co2monitor
 sudo su - co2monitor -s /bin/bash
 ```
 
+### Service start
+TODO: modifiy for the new service
+
+```bash
+sudo systemctl enable co2monitor
+sudo systemctl status co2monitor
+sudo systemctl --now start co2monitor
+```
+
+### Tests
+TODO: modifiy for the new service
+
+```bash
+curl -s -N --connect-timeout 20 --max-time 30 http://localhost:8090/co2ppm?monitor=0
+{"data": 807}
+curl -s -N --connect-timeout 20 --max-time 30 http://localhost:8090/temperature?monitor=0
+{"data": 21.912500000000023}
+```
