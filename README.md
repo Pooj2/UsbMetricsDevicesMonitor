@@ -50,3 +50,19 @@ curl -s -N --connect-timeout 20 --max-time 30 http://localhost:8090/co2ppm?monit
 curl -s -N --connect-timeout 20 --max-time 30 http://localhost:8090/temperature?monitor=0
 {"data": 21.912500000000023}
 ```
+
+### resetUsbDeviceFromPrompt
+```bash
+# see https://askubuntu.com/a/61165
+
+for X in /sys/bus/usb/devices/*; do 
+    echo "$X"
+    cat "$X/idVendor" 2>/dev/null 
+    cat "$X/idProduct" 2>/dev/null
+    echo
+done
+
+#Take the numbers above from 04d9:a052
+
+sudo sh -c "echo 0 > /sys/bus/usb/devices/1-1.2/authorized"; sudo sh -c "echo 1 > /sys/bus/usb/devices/1-1.2/authorized"
+```
