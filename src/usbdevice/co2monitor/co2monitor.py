@@ -79,7 +79,7 @@ class Co2Monitor(UsbDevice):
 
         # get an endpoint instance
         cfg = dev.get_active_configuration()
-        print('cfg:', cfg)
+        self.logger.info('cfg: %s', cfg)
         intf = cfg[(0, 0)]
         epin = usb.util.find_descriptor(
         intf,
