@@ -183,7 +183,7 @@ class Amgaze4(UsbDevice):
         
         # get an endpoint instance
         cfg = dev.get_active_configuration()
-        self.logger.debug('cfg:', cfg)
+        self.logger.debug('cfg: %s', cfg)
         intf = cfg[(0, 0)]
         self.epin = usb.util.find_descriptor(
                 intf,
