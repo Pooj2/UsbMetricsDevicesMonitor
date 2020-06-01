@@ -60,10 +60,6 @@ class Co2Monitor(UsbDevice):
     def hd(self, d):
         return " ".join("%02X" % e for e in d)
 
-    def verbose(self, line):
-        if self.isVerbose:
-            self.logger.info(line)
-
     def run(self):
         dev = self.device
         self.logger.info("dev reset...")

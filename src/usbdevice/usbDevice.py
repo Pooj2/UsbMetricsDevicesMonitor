@@ -19,3 +19,6 @@ class UsbDevice:
         Constructor
         '''
         
+    def verbose(self, line):
+        if self.isVerbose:
+            self.logger.info(line)
