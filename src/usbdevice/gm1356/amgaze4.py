@@ -106,7 +106,7 @@ class Amgaze4(UsbDevice):
         try:
             range_string = self.RANGES[aRange]
         except IndexError:
-            range_string = 'UNKNOWN(' + aRange + ')'
+            range_string = 'UNKNOWN(' + str(aRange) + ')'
     
         return range_string
     
