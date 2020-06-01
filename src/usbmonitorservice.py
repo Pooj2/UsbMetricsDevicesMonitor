@@ -89,7 +89,7 @@ if __name__ == '__main__':
         dbMonitorConnections.append(DbMonitorConnector(device))
         
     for connection in dbMonitorConnections:
-        usbMonitorProcesses.append(Process(target=connection.connect, args=(connection.db)))
+        usbMonitorProcesses.append(Process(target=connection.connect, args=(connection.db,)))
 
     for process in usbMonitorProcesses:
         process.start()
