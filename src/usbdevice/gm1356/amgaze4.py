@@ -135,13 +135,13 @@ class Amgaze4(UsbDevice):
     
         self.logger.debug(binascii.hexlify(data))
         self.db.value = self.get_dB(data[0], data[1])
-        self.verbose('      db: %s'.format(self.db.value))
+        self.verbose('      db: ' + str(self.db.value))
         self.settings = data[2]
         
-        self.verbose('   units: %s'.format(self.get_units(data[2])))
-        self.verbose('   speed:%s'.format(self.get_speed(data[2])))
-        self.verbose('max_lock: %s'.format(self.get_max_lock(data[2])))
-        self.verbose('   range: %s'.format(self.get_range(data[2])))
+        self.verbose('   units: ' + str(self.get_units(data[2])))
+        self.verbose('   speed: ' + str(self.get_speed(data[2])))
+        self.verbose('max_lock: ' + str(self.get_max_lock(data[2])))
+        self.verbose('   range: ' + str(self.get_range(data[2])))
     
     def set_config(self):
         self.logger.info("configure...")
