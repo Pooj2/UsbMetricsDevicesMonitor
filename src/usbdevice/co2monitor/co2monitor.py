@@ -105,7 +105,7 @@ class Co2Monitor(UsbDevice):
         self.logger.info("ctrl_transfer...")
 
         result = dev.ctrl_transfer(0x21, 0x09, wValue=0x0300, wIndex=0x00, data_or_wLength=key)
-        self.logger.info("ctrl_transfer done, result:", result)
+        self.logger.info("ctrl_transfer done, result: %s", result)
 
         values = {}
         while True:
@@ -114,11 +114,11 @@ class Co2Monitor(UsbDevice):
                 data = epin.read(8, timeout=5000)
             except usb.core.USBError as e:
                 if e.args == (110, 'Operation timed out'):
-                    self.logger.warn("TIMEOUT\n")
+                    self.logger.warn("TIMEOUT")
                     continue
             decrypted = self.decrypt(key, data)
             if decrypted[4] != 0x0d or (sum(decrypted[:3]) & 0xff) != decrypted[3]:
-                self.logger.error(self.hd(data), " => ", self.hd(decrypted), "Checksum error", self.device._str())
+                self.logger.error("%s => %s Checksum error %s", self.hd(data), self.hd(decrypted), self.device._str())
             else:
                 op = decrypted[0]
                 val = decrypted[1] << 8 | decrypted[2]
