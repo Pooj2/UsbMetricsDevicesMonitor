@@ -76,7 +76,7 @@ if __name__ == '__main__':
     devices = tuple(usb.core.find(find_all=True, idVendor=Co2Monitor._VID, idProduct=Co2Monitor._PID))
     co2MonitorConnections = []
     for device in devices:
-        logger.info("Co2Device", device.bus, device.address)
+        logger.info("Co2Device: %s - %s", device.bus, device.address)
         co2MonitorConnections.append(Co2MonitorConnector(device))
         
     for connection in co2MonitorConnections:
@@ -85,7 +85,7 @@ if __name__ == '__main__':
     devices = tuple(usb.core.find(find_all=True, idVendor=Amgaze4._VID, idProduct=Amgaze4._PID))
     dbMonitorConnections = []
     for device in devices:
-        logger.info("DbDevice", device.bus, device.address)
+        logger.info("DbDevice: %s - %s", device.bus, device.address)
         dbMonitorConnections.append(DbMonitorConnector(device))
         
     for connection in dbMonitorConnections:
