@@ -133,7 +133,7 @@ class Amgaze4(UsbDevice):
                     self.logger.warn('TIMEOUT')
                     continue
     
-        self.verbose('     raw: ' + binascii.hexlify(data))
+        self.verbose('     raw: ' + str(binascii.hexlify(data)))
         self.db.value = self.get_dB(data[0], data[1])
         self.verbose('      db: ' + str(self.db.value))
         self.settings = data[2]
